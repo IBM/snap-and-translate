@@ -14,7 +14,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 ## Flow
 1. The user interacts with the mobile app and captures an image or selects an image from the photo album.
 2. The image is passed to the Node.js server application that is running on IBM Cloud Kubernetes service which uses Tesseract OCR to recognize text in an image.
-3. Watson Language Translator translates the recognized text.
+3. Watson Language Translator that is bound to the cluster translates the recognized text.
 4. Recognized text and language translator result is returned to the mobile app for display.
 
 ## Included components

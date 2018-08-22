@@ -1,0 +1,20 @@
+{
+  "name": "watson-tesseract-translator",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.17.x",
+    "express": "^4.16.3",
+    "formidable": "*",
+    "node-tesseract": "*",
+    "watson-developer-cloud": "3.8.0"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/riyamaro/snap-translate.git"
+  }
+}

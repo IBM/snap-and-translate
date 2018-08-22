@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy-watson-tesseract-service
+  labels:
+    app: app
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    name: http
+    nodePort: 30047
+  selector:
+    app: app
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: deploy-watson-tesseract-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: deploy-watson-tesseract
+        image: registry.ng.bluemix.net/<namespace>/<imagename>:<tag>
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+            - mountPath: /opt/lt-service-bind
+              name: service-bind-volume
+      volumes:
+        - name: service-bind-volume
+          secret:
+            defaultMode: 420
+            secretName: binding-ocrlangtranslator

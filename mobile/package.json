@@ -1,0 +1,17 @@
+{
+    "name": "com.example.myocrtranslator",
+    "displayName": "TranslateIt",
+    "version": "1.0.0",
+    "description": "A mobile application that can cature image, recognize and translate text using Tesseract OCR & Watson Language Translator",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Riya Mary Roy",
+    "license": "Apache-2.0",
+    "dependencies": {},
+    "cordova": {
+        "plugins": {},
+        "platforms": []
+    }
+}

@@ -49,7 +49,7 @@ Run this application in a container with Kubernetes on IBM Cloud using these [in
 
 ## 3. Deploy mobile application
 
-Deploy mobile application using thse [instructions](doc/source/Mobileapp.md)
+Deploy mobile application using thse [instructions](doc/source/Mobileapp.md).
 
 # Sample output
 

@@ -45,7 +45,7 @@ $ cd snap-and-translate
 
 ## 2. Run Server application in container
 
-Run this application in a container with Kubernetes on IBM Cloud using these [instructions](doc/source/Container.md).
+Run server application in a container with Kubernetes on IBM Cloud using these [instructions](doc/source/Container.md).
 
 ## 3. Deploy mobile application
 

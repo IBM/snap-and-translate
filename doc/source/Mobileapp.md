@@ -1,13 +1,19 @@
-## 2. Update config values for the Mobile App
+# Deploy mobile application
 
-Edit `mobile/www/config.json` and update the setting with the Public IP address and NODE PORT retrieved previously.
+Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.
 
-```javascript
+## 1. Update config values for the Mobile App
+
+Edit `mobile/www/config.json` and update the setting with the Public IP address and NODE PORT( nodePort from `snap-and-translate/server/watson-lang-trans.yml`) retrieved previously.
+
+```
 "SERVER_URL": "http://<replace_public_ip_address>:<replace_node_port>/uploadpic"
 ```
-## 3. Install dependencies to build the mobile application
+## 2. Install Requirements to build the mobile application
 
-For this Code Pattern, you'll need to install the prerequisites, by following their respective documentation:
+For this Code Pattern, you'll need to at first install the prerequisites for Android and iOS, by following their respective documentation:
+
+### 2a. [Android requirements](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#requirements-and-support)
 
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Node.js and npm](https://nodejs.org/en/download/) (`npm` version 4.5.0 or higher)
@@ -34,11 +40,25 @@ Once you have completed all of the required installs and setup, you should have 
 * `ANDROID_HOME`
 * `PATH`
 
-> Note: For additonal help setting these environment variables, refer to the  [Troubleshooting](#troubleshooting) section below.
+> Note: For additonal help setting these environment variables, refer to the Troubleshooting section in README.
 
-## 5. Add Android/iOS platform and plug-ins
+### 2b. [iOS requirements](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#requirements-and-support)
 
-Start by adding the Android platform as the target for your mobile app.
+* [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+* [Deployment Tools](https://www.npmjs.com/package/ios-deploy)- To install it, run the following from command-line terminal: `npm install -g ios-deploy`
+
+Installing Xcode will mostly set everything needed to get started with the native side of things. You should now be able to create and build a cordova project.
+
+You need to do the following before deploying:
+
+* Create a Provisioning Profile within the [iOS Provisioning Portal](https://developer.apple.com/ios/manage/overview/index.action). You can use its Development Provisioning Assistant to create and install the profile and certificate Xcode requires.
+
+* Verify that the Code Signing Identity setting within the Code Signing section within the build settings is set to your provisioning profile name.
+
+
+## 3. Add Android/iOS platform and plug-ins
+
+Start by adding the Android/iOS platform as the target for your mobile app.
 
 ```
 $ cd snap-and-translate/mobile
@@ -58,3 +78,24 @@ Finally, install the plugins required by the application:
 $ cordova plugin add cordova-plugin-camera
 $ cordova plugin add cordova-plugin-file-transfer
 ```
+
+## 4. Build the App
+
+Run the following command to build the project for all platforms:
+
+```
+$ cordova build
+```
+
+## 5. Run the App
+
+Plug the mobile into your computer/laptop using USB cable and test the app directly by executing the command:
+
+```
+$ cordova run android (if you have android device)
+$ cordova run ios (if you have iOS device)
+```
+
+> Android Studio will handle the transfer for you if you tether your Android device to your computer, and enable both `Developer Options` and `USB Debugging`.Please refer to documentation on your specific phone to set these options.
+
+At this point, the app named `TranslateIt` should be on your mobile device. Use the camera button to take a photo of an image that has text or photo album button to select image from your album, and allow Tesseract OCR to extract text and Watson Language Translator to translate the recognized text.

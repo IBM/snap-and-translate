@@ -28,6 +28,8 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Watch the Video
 
+[Video to be updated]
+
 # Steps
 
 
@@ -36,11 +38,38 @@ When the reader has completed this Code Pattern, they will understand how to:
 <img src="doc/source/images/output1.jpg" width="250">  <img src="doc/source/images/output2.jpg" width="250">
 <img src="doc/source/images/output3.jpg" width="250">
 
+# Troubleshooting
+
+* `cordova run android` error: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]
+
+> The `Calorie Counter` app is already installed on your phone and incompatible with the version you are now trying to run. Uninstall the current version and try again.
+
+* `cordova run android` error: No target specified and no devices found, deploying to emulator
+
+> Ensure that your phone is plugged into your computer and you can access it from the Android File Transfer utility (see Step #6 above).
+
+* How to determine proper values for environment variables:
+
+Open `Android Studio` and navigate to `File` -> `Project Structure` -> `SDK
+Location`. This location value will serve as the base for your environment variables. For example, if the location is `/users/joe/Android/sdk`, then:
+
+```
+$ export ANDROID_HOME=/users/joe/Android/sdk
+$ export ANDROID_SDK_HOME=/users/joe/Android/sdk/platforms/android-<api-level>
+$ export PATH=${PATH}:/users/joe/Android/sdk/platform-tools:/users/joe/Android/sdk/tools
+```
+
+* `ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default --service <watson_service_name>`
+
+Error: "This IBM cloud service does not support the Cloud Foundry service keys API and cannot be added to your Cluster"
+
+This error message is likely occurring because the service instance has not fully instantiated. Please wait a few minutes and then try binding the service instance again.
+
 # Links
 
-[Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk): : Visit the Node.js library to access IBM Watson services.
-[Create Kubernetes cluster](https://console.bluemix.net/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
-[Sample Node.js application for Language Translator](https://github.com/watson-developer-cloud/language-translator-nodejs): Sample Node.JS application for Watson Language Translator service
+* [Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk):Visit the Node.js library to access IBM Watson services.
+* [Create Kubernetes cluster](https://console.bluemix.net/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
+* [Sample Node.js application for Language Translator](https://github.com/watson-developer-cloud/language-translator-nodejs): Sample Node.JS application for Watson Language Translator service
 
 # Learn more
 

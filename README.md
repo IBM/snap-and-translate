@@ -32,11 +32,12 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Steps
 
+This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR and Watson Language Translator. Mobile application is built locally and run on the Android/iOS phone.
 
 # Sample output
 
-<img src="doc/source/images/output1.png" width="250">  <img src="doc/source/images/output2.png" width="250">
-<img src="doc/source/images/output3.png" width="250">
+<img src="doc/source/images/output1.PNG" width="250">  <img src="doc/source/images/output2.PNG" width="250">
+<img src="doc/source/images/output3.PNG" width="250">
 
 # Troubleshooting
 

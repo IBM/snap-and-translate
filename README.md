@@ -1,4 +1,4 @@
-# Build mobile app that can capture image,recognize and translate text using Tesseract OCR & Watson Language Translator
+# Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
 In this Code Pattern, we will create a hybrid mobile app using Apache Cordova and Node.js server application running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images and Watson Language Translator to translate the recognized text. This mobile app translates the recognized text from the images captured or uploaded from the photo album.
 
@@ -12,7 +12,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 ![Architecture diagram](doc/source/images/architecture.png)
 
 ## Flow
-1. User interacts with the mobile app and captures an image or selects an image from the photo album.
+1. The user interacts with the mobile app and captures an image or selects an image from the photo album.
 2. The image is passed to the Node.js server application that is running on IBM Cloud Kubernetes service which uses Tesseract OCR to recognize text in an image.
 3. Watson Language Translator translates the recognized text.
 4. Recognized text and language translator result is returned to the mobile app for display.
@@ -28,11 +28,28 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Watch the Video
 
-[Video to be updated]
+TODO
 
 # Steps
 
 This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR and Watson Language Translator. Mobile application is built locally and run on the Android/iOS phone.
+
+## 1. Clone the repo
+
+Clone the `snap-and-translate` repo locally. In a terminal, run:
+
+```
+$ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
+$ cd snap-and-translate
+```
+
+## 2. Run Server application in container
+
+Run this application in a container with Kubernetes on IBM Cloud using these [instructions](doc/source/Container.md).
+
+## 3. Deploy mobile application
+
+Deploy mobile application using thse [instructions](doc/source/Mobileapp.md)
 
 # Sample output
 

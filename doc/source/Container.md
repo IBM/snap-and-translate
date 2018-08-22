@@ -6,8 +6,6 @@ Install the [pre-requisites](https://github.com/IBM/container-service-getting-st
 
 # Steps
 
-## Create the Kubernetes cluster
-
 * Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://console.bluemix.net/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 * Set the Kubernetes environment to work with your cluster:
@@ -24,7 +22,7 @@ $ export KUBECONFIG=/Users/riyaroy/.bluemix/plugins/container-service/clusters/<
 
 * Add Language Translator service to your cluster
 
-Add the Language Translator service to your IBM Cloud account. Replace with a name for your service instance.
+Add the Language Translator service to your IBM Cloud account by replacing with a name for your service instance.
 
 ```
 $ bx service create create language_translator lite <service_name>
@@ -64,3 +62,5 @@ $ kubectl apply -f watson-lang-trans.yml
 ```
 $ bx cs workers <cluster_name>
 ```
+
+Now refer [Mobileapp.md](doc/source/Mobileapp.md) to deloy mobile application

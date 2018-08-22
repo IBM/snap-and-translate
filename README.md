@@ -1,18 +1,21 @@
-# Build mobile app that can capture image,recognize text and translate using Tesseract OCR & Watson Language Translator
+# Build mobile app that can capture image,recognize and translate text using Tesseract OCR & Watson Language Translator
 
-
+In this Code Pattern, we will create a hybrid mobile app using Apache Cordova and Node.js server application running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images and Watson Language Translator to translate the recognized text. This mobile app translates the recognized text from the images captured or uploaded from the photo album.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
-*
-*
+* Use the Cordova mobile framework to build and deploy mobile app.
+* Create Node.js apps that capture, recognize and translate text using Watson services.
+* Deploy Tesseract OCR on IBM Cloud Kubernetes service to recognize text and bind Watson service to cluster.
+* Translate recognized text using Watson Language Translator.
 
-## Architecture
+![Architecture diagram](doc/source/images/architecture.png)
 
 ## Flow
 1. User interacts with the mobile app and captures an image or selects an image from the photo album.
-2. The image is passed to the Node.js server application which is running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images and Watson Language Translator will translate the recognized text.
-3. Result is returned to the mobile app for display.
+2. The image is passed to the Node.js server application that is running on IBM Cloud Kubernetes service which uses Tesseract OCR to recognize text in an image.
+3. Watson Language Translator translates the recognized text.
+4. Recognized text and language translator result is returned to the mobile app for display.
 
 ## Included components
 * [IBM Cloud Container Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Bluemix Container Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
@@ -25,23 +28,19 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Watch the Video
 
-
-
 # Steps
-
-1. [Deploy to IBM Cloud](#deploy-to-ibm-cloud)
-
-1. [Setup Google Actions](#setup-google-actions)
-
-1. [Talk to it!](#talk-to-it)
-
 
 
 # Sample output
 
+<img src="doc/source/images/output1.jpg" width="250">  <img src="doc/source/images/output2.jpg" width="250">
+<img src="doc/source/images/output3.jpg" width="250">
 
 # Links
 
+[Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk): : Visit the Node.js library to access IBM Watson services.
+[Create Kubernetes cluster](https://console.bluemix.net/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
+[Sample Node.js application for Language Translator](https://github.com/watson-developer-cloud/language-translator-nodejs): Sample Node.JS application for Watson Language Translator service
 
 # Learn more
 
@@ -51,4 +50,3 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # License
 [Apache 2.0](LICENSE)
-

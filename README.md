@@ -35,8 +35,8 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 # Sample output
 
-<img src="doc/source/images/output1.jpg" width="250">  <img src="doc/source/images/output2.jpg" width="250">
-<img src="doc/source/images/output3.jpg" width="250">
+<img src="doc/source/images/output1.png" width="250">  <img src="doc/source/images/output2.png" width="250">
+<img src="doc/source/images/output3.png" width="250">
 
 # Troubleshooting
 

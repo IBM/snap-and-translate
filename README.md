@@ -60,7 +60,7 @@ Deploy mobile application using thse [instructions](doc/source/Mobileapp.md).
 
 * `cordova run android` error: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]
 
-> The `Calorie Counter` app is already installed on your phone and incompatible with the version you are now trying to run. Uninstall the current version and try again.
+> The `TranslateIt` app is already installed on your phone and incompatible with the version you are now trying to run. Uninstall the current version and try again.
 
 * `cordova run android` error: No target specified and no devices found, deploying to emulator
 

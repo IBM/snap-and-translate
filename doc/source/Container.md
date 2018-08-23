@@ -63,4 +63,4 @@ $ kubectl apply -f watson-lang-trans.yml
 $ bx cs workers <cluster_name>
 ```
 
-Now refer [Mobileapp.md](doc/source/Mobileapp.md) to deloy mobile application
+Now refer [Mobileapp.md](Mobileapp.md) to deploy the mobile application

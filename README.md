@@ -43,11 +43,7 @@ $ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-## 2. Run Server application in container
-
-Run server application in a container with Kubernetes on IBM Cloud using the follwoing instructions:
-
-### Run Server application in a container on IBM Cloud with Kubernetes
+## 2. Run Server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.
 

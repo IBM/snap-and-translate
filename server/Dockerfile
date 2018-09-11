@@ -11,6 +11,7 @@ RUN apt-get -q -y install gcc
 
 COPY app.js .
 COPY package.json .
+COPY .env .
 RUN npm install
 EXPOSE 3000
 CMD node app.js

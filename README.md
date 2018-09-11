@@ -34,6 +34,14 @@ TODO
 
 This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR and Watson Language Translator. Mobile application is built locally and run on the Android/iOS phone.
 
+
+1. [Clone the repo](#1-clone-the-repo)
+2. [Create language tranlsation service with IBM Cloud](#4-create-watson-service-with-ibm-cloud)
+3. [Configure credentials](#6-configure-credentials)
+4. [Run the server application in a container on IBM Cloud with Kubernetes](#7-run-the-application-locally-using-docker)
+5. [Run the server application locally using docker](#7-run-the-application-locally-using-docker)
+6. [Run the mobile application](#6-run-the-mobile-application)
+
 ## 1. Clone the repo
 
 Clone the `snap-and-translate` repo locally. In a terminal, run:
@@ -43,7 +51,14 @@ $ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-## 2. Run Server application in a container on IBM Cloud with Kubernetes
+## 2. Create language translation service with IBM cloud
+
+If you do not already have a IBM Cloud account, [sign up for Bluemix](https://console.bluemix.net/registration).
+Create the following services:
+
+* [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
+
+## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.
 
@@ -108,6 +123,38 @@ $ kubectl apply -f watson-lang-trans.yml
 $ bx cs workers <cluster_name>
 ```
 
+## 2. Run the server application locally
+
+* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL`. From terminal run: 
+
+	```
+	$ cp env.sample .env
+	```
+	
+	
+	```
+	# Copy this file to .env and replace the credentials with
+	# your own before starting the app.
+
+	LANGUAGE_TRANSLATOR_IAM_APIKEY=<use iam apikey here>
+	LANGUAGE_TRANSLATOR_URL=<use url here>
+	
+	```	
+
+* Go to `server` folder and run the docker build. From terminal run: 
+
+	```
+	$ cd server
+	$ docker build -t snap-translate-server .
+	```
+* Run the docker image. This will run the server app on port 3000. From terminal run:
+
+	```
+		docker run --rm -it -p 3000:3000 snap-translate-server
+	```
+* You can now access the `server`	 API using URL: `http://localhost:3000`
+
+
 ## 3. Deploy mobile application
 
 Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.
@@ -118,6 +165,26 @@ Edit `mobile/www/config.json` and update the setting with the Public IP address 
 
 ```
 "SERVER_URL": "http://<replace_public_ip_address>:<replace_node_port>/uploadpic"
+```
+
+* **Accessing local API from mobile app**
+
+To access the local API from the mobile app, we can use a tool called `ngrok`. you can install `ngrok` using the link: `https://ngrok.com/`
+
+After the docker build is running you can now run the `ngrok` command from the place where you have installed it. If `ngrok` is installed at location: `/usr/local/ngrok`, from terminal run:
+
+```
+$ ./usr/local/ngrok http 3000
+```
+The sample output of the above command is: 
+
+![](doc/source/images/ngrok.png)
+
+
+This will bind your local address to a public address at port 3000. Now you can replace the `SERVER_URL` to the `forwarding address` that can be retrieved from the screenshot above. As an example the `SERVER-URL` will now be:
+
+```
+"SERVER_URL": "http://b336a2d7.ngrok.io/uploadpic"
 ```
 
 ### 2. Install Requirements to build the mobile application

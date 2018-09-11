@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.17.x",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "formidable": "*",
     "node-tesseract": "*",

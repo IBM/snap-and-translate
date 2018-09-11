@@ -269,10 +269,13 @@ $ cordova build
 
 Plug the mobile into your computer/laptop using USB cable and test the app directly by executing the command:
 
+> Open the `TranslateIt.xcworkspace` from `mobile/platforms/ios` folder and code sign using Xcode.
+
 ```
 $ cordova run android (if you have android device)
 $ cordova run ios (if you have iOS device)
 ```
+
 
 > Android Studio will handle the transfer for you if you tether your Android device to your computer, and enable both `Developer Options` and `USB Debugging`.Please refer to documentation on your specific phone to set these options.
 
@@ -280,8 +283,9 @@ At this point, the app named `TranslateIt` should be on your mobile device. Use 
 
 # Sample output
 
-<img src="doc/source/images/output1.PNG" width="250">  <img src="doc/source/images/output2.PNG" width="250">
-<img src="doc/source/images/output3.PNG" width="250">
+![](doc/source/images/output1.png)
+![](doc/source/images/output2.png)
+![](doc/source/images/output_2.png)
 
 # Troubleshooting
 

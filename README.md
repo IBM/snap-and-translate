@@ -276,9 +276,10 @@ $ cordova run ios (if you have iOS device)
 At this point, the app named `TranslateIt` should be on your mobile device. Use the camera button to take a photo of an image that has text or photo album button to select image from your album, and allow Tesseract OCR to extract text and Watson Language Translator to translate the recognized text.
 
 # Sample output
-
-![](doc/source/images/output1.png)
-![](doc/source/images/output2.png)
+* Here is what the app looks like in an iPhone.
+![](doc/source/images/output1.PNG)
+![](doc/source/images/output2.PNG)
+* Here's the app translating a Spanish text from a road sign to English.
 ![](doc/source/images/output_2.png)
 
 # Troubleshooting

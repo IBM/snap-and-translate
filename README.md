@@ -37,10 +37,9 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create language translation service with IBM Cloud](#2-create-language-translation-service-with-ibm-cloud)
-3. [Configure credentials](#3-configure-credentials)
-4. [Run the server application in a container on IBM Cloud with Kubernetes](#4-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
-5. [Run the server application locally using docker](#5-run-the-application-locally-using-docker)
-6. [Run the mobile application](#6-run-the-mobile-application)
+3. [Run the server application in a container on IBM Cloud with Kubernetes](#3-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
+4. [Run the server application locally using docker](#4-run-the-application-locally-using-docker)
+5. [Run the mobile application](#5-run-the-mobile-application)
 
 ## 1. Clone the repo
 
@@ -60,7 +59,7 @@ Create the following services:
 
 Go to `Service Credentials` and save the `API Key` and `URL` for later use.
 
-## 2. Run the server application in a container on IBM Cloud with Kubernetes
+## 3. Run the server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.
 
@@ -125,7 +124,7 @@ $ kubectl apply -f watson-lang-trans.yml
 $ bx cs workers <cluster_name>
 ```
 
-## 2. Run the server application locally
+## 4. Run the server application locally
 
 * Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run: 
 
@@ -156,7 +155,7 @@ $ bx cs workers <cluster_name>
 * You can now access the `server`	 API using URL: `http://localhost:3000`
 
 
-## 3. Deploy mobile application
+## 5. Run the mobile application
 
 Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.
 

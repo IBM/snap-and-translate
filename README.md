@@ -36,10 +36,10 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create language tranlsation service with IBM Cloud](#4-create-watson-service-with-ibm-cloud)
-3. [Configure credentials](#6-configure-credentials)
-4. [Run the server application in a container on IBM Cloud with Kubernetes](#7-run-the-application-locally-using-docker)
-5. [Run the server application locally using docker](#7-run-the-application-locally-using-docker)
+2. [Create language translation service with IBM Cloud](#2-create-language-translation-service-with-ibm-cloud)
+3. [Configure credentials](#3-configure-credentials)
+4. [Run the server application in a container on IBM Cloud with Kubernetes](#4-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
+5. [Run the server application locally using docker](#5-run-the-application-locally-using-docker)
 6. [Run the mobile application](#6-run-the-mobile-application)
 
 ## 1. Clone the repo
@@ -57,6 +57,8 @@ If you do not already have a IBM Cloud account, [sign up for Bluemix](https://co
 Create the following services:
 
 * [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
+
+Go to `Service Credentials` and save the `API Key` and `URL` for later use.
 
 ## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
@@ -125,12 +127,11 @@ $ bx cs workers <cluster_name>
 
 ## 2. Run the server application locally
 
-* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL`. From terminal run: 
+* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run: 
 
 	```
 	$ cp env.sample .env
 	```
-	
 	
 	```
 	# Copy this file to .env and replace the credentials with

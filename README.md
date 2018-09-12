@@ -126,34 +126,28 @@ $ bx cs workers <cluster_name>
 
 ## 4. Run the server application locally
 
-* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run: 
+* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
 
-	```
-	$ cp env.sample .env
-	```
-	
-	```
-	# Copy this file to .env and replace the credentials with
-	# your own before starting the app.
+```
+$ cp env.sample .env
 
-	LANGUAGE_TRANSLATOR_IAM_APIKEY=<use iam apikey here>
-	LANGUAGE_TRANSLATOR_URL=<use url here>
-	
-	```	
+# Copy this file to .env and replace the credentials with
+# your own before starting the app.
+
+LANGUAGE_TRANSLATOR_IAM_APIKEY=<use iam apikey here>
+LANGUAGE_TRANSLATOR_URL=<use url here>
+```	
 
 * Go to `server` folder and run the docker build. From terminal run: 
-
-	```
-	$ cd server
-	$ docker build -t snap-translate-server .
-	```
+```
+$ cd server
+$ docker build -t snap-translate-server .
+```
 * Run the docker image. This will run the server app on port 3000. From terminal run:
-
-	```
-		docker run --rm -it -p 3000:3000 snap-translate-server
-	```
-* You can now access the `server`	 API using URL: `http://localhost:3000`
-
+```
+docker run --rm -it -p 3000:3000 snap-translate-server
+```
+* You can now access the `server` API using URL: `http://localhost:3000`
 
 ## 5. Run the mobile application
 
@@ -282,9 +276,13 @@ $ cordova run ios (if you have iOS device)
 At this point, the app named `TranslateIt` should be on your mobile device. Use the camera button to take a photo of an image that has text or photo album button to select image from your album, and allow Tesseract OCR to extract text and Watson Language Translator to translate the recognized text.
 
 # Sample output
+>Here's what the app looks like on an iPhone. Its translating a French text from an image to English.
 
 ![](doc/source/images/output1.png)
 ![](doc/source/images/output2.png)
+
+> Here's the app translating Spanish text from a road sign to English text.
+
 ![](doc/source/images/output_2.png)
 
 # Troubleshooting

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.myocrtranslator" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ibm.myocrtranslator" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TranslateIt</name>
     <description>
         Snap images to recognize and translate text.
@@ -28,4 +28,7 @@
             <string>need photo library access to get pictures from there</string>
         </edit-config>
     </platform>
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <engine name="ios" spec="^4.5.5" />
 </widget>

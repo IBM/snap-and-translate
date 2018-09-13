@@ -41,6 +41,14 @@ function onDevice(){
     document.getElementById("languagetranslator").innerHTML = "&nbsp;Translation";
     var output = Response.data;
     document.getElementById("translatorresult").innerHTML = output;
+    var sentimentop = Response.sentiment;
+    sentimentop = sentimentop.replace(/"/g,"");
+    document.getElementById("sentiment").innerHTML = "&nbsp;Overall Sentiment:&nbsp;" + sentimentop.toUpperCase();
+    document.getElementById("emotion").innerHTML = "&nbsp;Emotion";
+    var emotionop = Response.emotion;
+    emotionop = emotionop.replace(/{|"|}/g,"");
+    emotionop = emotionop.replace(/,/g,"<br>");
+    document.getElementById("emotionoutput").innerHTML = emotionop.toUpperCase();
     }
     var fail = function (error) {
     alert("An error has occurred: Code = " + error.code);

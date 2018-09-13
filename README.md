@@ -1,6 +1,6 @@
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
-In this Code Pattern, we will create a hybrid mobile app using Apache Cordova and Node.js server application running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images and Watson Language Translator to translate the recognized text. This mobile app translates the recognized text from the images captured or uploaded from the photo album.
+In this Code Pattern, we will create a hybrid mobile app using Apache Cordova and Node.js server application running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images, Watson Language Translator to translate the recognized text and Watson Natural Language Understanding to extract emotion,sentiment from the text. This mobile app translates the recognized text from the images captured or uploaded from the photo album.
 
 When the reader has completed this Code Pattern, they will understand how to:
 
@@ -8,18 +8,20 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Create Node.js apps that capture, recognize and translate text using Watson services.
 * Deploy Tesseract OCR on IBM Cloud Kubernetes service to recognize text and bind Watson service to cluster.
 * Translate recognized text using Watson Language Translator.
+* Extract sentiment, emotion from the text using Watson Natural Language Understanding.
 
-![Architecture diagram](doc/source/images/architecture-v2.png)
+![Architecture diagram](doc/source/images/architecture-v3.png)
 
 ## Flow
 1. The user interacts with the mobile app and captures an image or selects an image from the photo album.
 2. The image is passed to the Node.js server application that is running on IBM Cloud Kubernetes service which uses Tesseract OCR to recognize text in an image.
-3. Node.js app uses Watson language translator service to translate the recognized text.
-4. Recognized text and language translator result is returned to the mobile app for display.
+3. Node.js app uses Watson language translator service to translate the recognized text and Watson Natural Language Understanding to return the sentiment & emotion of the translated text.
+4. Recognized text,translated language,sentiment and emotion result is returned to the mobile app for display.
 
 ## Included components
 * [IBM Cloud Container Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Bluemix Container Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
 * [Watson Language Translator](https://www.ibm.com/watson/services/language-translator/): IBM Watson Language Translator is a service that enables you to dynamically translate news, patents or conversational documents.
+* [Watson Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding.html): An IBM Cloud service that can analyze text to extract meta-data from content such as concepts, entities, keywords, categories, sentiment, emotion, relations, semantic roles, using natural language understanding. 
 
 ## Featured technologies
 * [Apache Cordova](https://cordova.apache.org/): An an open-source mobile development framework to build hybrid mobile apps.
@@ -36,7 +38,7 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create language translation service with IBM Cloud](#2-create-language-translation-service-with-ibm-cloud)
+2. [Create language translation & natural language understanding service with IBM Cloud](#2-create-language-translation-service-with-ibm-cloud)
 3. [Run the server application in a container on IBM Cloud with Kubernetes](#3-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
 4. [Run the server application locally using docker](#4-run-the-application-locally-using-docker)
 5. [Run the mobile application](#5-run-the-mobile-application)
@@ -50,12 +52,13 @@ $ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-## 2. Create language translation service with IBM cloud
+## 2. Create language translation & natural language understanding service with IBM Cloud
 
 If you do not already have a IBM Cloud account, [sign up for Bluemix](https://console.bluemix.net/registration).
 Create the following services:
 
 * [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
+* [**Watson Natural Language Understanding**](https://console.bluemix.net/catalog/services/natural-language-understanding)
 
 Go to `Service Credentials` and save the `API Key` and `URL` for later use.
 
@@ -81,18 +84,20 @@ The output of this command will contain a KUBECONFIG environment variable that m
 $ export KUBECONFIG=/Users/riyaroy/.bluemix/plugins/container-service/clusters/<cluster_name>/kube-config-hou02-<cluster_name>.yml
 ```
 
-* Add Language Translator service to your cluster
+* Add Language Translator & Natural Language Understanding service to your cluster
 
-Add the Language Translator service to your IBM Cloud account by replacing with a name for your service instance.
+Add the Language Translator & Natural Language Understanding service to your IBM Cloud account by replacing with a name for your service instance.
 
 ```
 $ bx service create create language_translator lite <service_name>
+$ bx service create create natural-language-understanding free <service_name>
 ```
 
-* Bind the Language Translator instance to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.
+* Bind the Language Translator & Natural Language Understanding instance to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.
 
 ```
-$ bx cs cluster-service-bind --cluster <cluster_name> --namespace default --service <service_name>
+$ bx cs cluster-service-bind --cluster <cluster_name> --namespace default --service <language_translate_service_name>
+$ bx cs cluster-service-bind --cluster <cluster_name> --namespace default --service <nlu_service_name>
 ```
 
 Your cluster is configured and your local environment is ready for you to start deploying apps into the cluster.
@@ -148,7 +153,7 @@ $ docker build -t snap-translate-server .
 docker run --rm -it -p 3000:3000 snap-translate-server
 ```
 * You can now access the `server` API using URL: `http://localhost:3000`
-
+```
 ## 5. Run the mobile application
 
 Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.
@@ -277,10 +282,10 @@ At this point, the app named `TranslateIt` should be on your mobile device. Use 
 
 # Sample output
 * Here is what the app looks like in an iPhone.
-![](doc/source/images/output1.PNG)
-![](doc/source/images/output2.PNG)
+<img src="doc/source/images/output1.PNG" width="250"><img src="doc/source/images/output2.PNG" width="250">
+<img src="doc/source/images/output3.PNG" width="250">
 * Here's the app translating a Spanish text from a road sign to English.
-![](doc/source/images/output_2.png)
+<img src="doc/source/images/output_2.PNG" width="250">
 
 # Troubleshooting
 

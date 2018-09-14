@@ -40,7 +40,7 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 
 
 1. [Clone the repo](#1-clone-the-repo)
-2. [Create language translation & natural language understanding service with IBM Cloud](#2-create-language-translation-service-with-ibm-cloud)
+2. [Create language translation and natural language understanding service with IBM Cloud](#2-create-language-translation-and-natural-language-understanding-service-with-ibm-cloud)
 3. [Run the server application in a container on IBM Cloud with Kubernetes](#3-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
 4. [Run the server application locally using docker](#4-run-the-application-locally-using-docker)
 5. [Run the mobile application](#5-run-the-mobile-application)
@@ -54,7 +54,7 @@ $ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-## 2. Create language translation & natural language understanding service with IBM Cloud
+## 2. Create language translation and natural language understanding service with IBM Cloud
 
 If you do not already have a IBM Cloud account, [sign up for Bluemix](https://console.bluemix.net/registration).
 Create the following services:

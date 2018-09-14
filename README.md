@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/IBM/<repo>.svg?branch=master)](https://travis-ci.org/IBM/<repo>)
+
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
 In this Code Pattern, we will create a hybrid mobile app using Apache Cordova and Node.js server application running on IBM Cloud Kubernetes service that uses Tesseract OCR to recognize text in images, Watson Language Translator to translate the recognized text and Watson Natural Language Understanding to extract emotion,sentiment from the text. This mobile app translates the recognized text from the images captured or uploaded from the photo album.
@@ -34,7 +36,7 @@ TODO
 
 # Steps
 
-This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR and Watson Language Translator. Mobile application is built locally and run on the Android/iOS phone.
+This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR, Watson Language Translator and Watson Natural Language Understanding. Mobile application is built locally and run on the Android/iOS phone.
 
 
 1. [Clone the repo](#1-clone-the-repo)
@@ -292,9 +294,7 @@ At this point, the app named `TranslateIt` should be on your mobile device. Use 
 
 * Here is what the app looks like in an iPhone.
 
-<img src="doc/source/images/output1.PNG" width="250">
-<img src="doc/source/images/output2.PNG" width="250">
-<img src="doc/source/images/output3.PNG" width="250">
+<img src="doc/source/images/output1.PNG" width="250"><img src="doc/source/images/output2.PNG" width="250"><img src="doc/source/images/output3.PNG" width="250">
 
 * Here's the app translating a Spanish text from a road sign to English.
 

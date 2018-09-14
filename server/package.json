@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.ibm.com/riyamaro/snap-translate.git"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0"
   }
 }

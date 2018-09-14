@@ -144,13 +144,11 @@ $ cp env.sample .env
 LANGUAGE_TRANSLATOR_IAM_APIKEY=<use iam apikey here>
 LANGUAGE_TRANSLATOR_URL=<use url here>
 
-# You need to provide either username and password
-NATURAL_LANGUAGE_UNDERSTANDING_USERNAME=<use username here>
-NATURAL_LANGUAGE_UNDERSTANDING_PASSWORD=<use password here>
-NATURAL_LANGUAGE_UNDERSTANDING_URL=https://gateway.watsonplatform.net/natural-language-understanding/api
-# OR IAM API key and URL
-NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<use iam apikey here>
-NATURAL_LANGUAGE_UNDERSTANDING_IAM_URL=<use url here>
+## Un-comment and use either username+password or IAM apikey.
+# NATURAL_LANGUAGE_UNDERSTANDING_USERNAME=<use natural language understanding username>
+# NATURAL_LANGUAGE_UNDERSTANDING_PASSWORD=<use natural language understanding password>
+NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<use natural language understanding iam API key>
+NATURAL_LANGUAGE_UNDERSTANDING_URL=<use natural language understanding URL>
 ```	
 
 * Go to `server` folder and run the docker build. From terminal run: 

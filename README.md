@@ -91,8 +91,8 @@ $ export KUBECONFIG=/Users/riyaroy/.bluemix/plugins/container-service/clusters/<
 Add the Language Translator & Natural Language Understanding service to your IBM Cloud account by replacing with a name for your service instance.
 
 ```
-$ bx service create create language_translator lite <service_name>
-$ bx service create create natural-language-understanding free <service_name>
+$ bx service create language_translator lite <service_name>
+$ bx service create natural-language-understanding free <service_name>
 ```
 
 * Bind the Language Translator & Natural Language Understanding instance to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.

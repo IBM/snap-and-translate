@@ -153,7 +153,7 @@ $ docker build -t snap-translate-server .
 docker run --rm -it -p 3000:3000 snap-translate-server
 ```
 * You can now access the `server` API using URL: `http://localhost:3000`
-```
+
 ## 5. Run the mobile application
 
 Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.

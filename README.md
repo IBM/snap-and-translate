@@ -141,6 +141,14 @@ $ cp env.sample .env
 
 LANGUAGE_TRANSLATOR_IAM_APIKEY=<use iam apikey here>
 LANGUAGE_TRANSLATOR_URL=<use url here>
+
+# You need to provide either username and password
+NATURAL_LANGUAGE_UNDERSTANDING_USERNAME=<use username here>
+NATURAL_LANGUAGE_UNDERSTANDING_PASSWORD=<use password here>
+NATURAL_LANGUAGE_UNDERSTANDING_URL=https://gateway.watsonplatform.net/natural-language-understanding/api
+# OR IAM API key and URL
+NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<use iam apikey here>
+NATURAL_LANGUAGE_UNDERSTANDING_IAM_URL=<use url here>
 ```	
 
 * Go to `server` folder and run the docker build. From terminal run: 
@@ -281,11 +289,16 @@ $ cordova run ios (if you have iOS device)
 At this point, the app named `TranslateIt` should be on your mobile device. Use the camera button to take a photo of an image that has text or photo album button to select image from your album, and allow Tesseract OCR to extract text and Watson Language Translator to translate the recognized text.
 
 # Sample output
+
 * Here is what the app looks like in an iPhone.
-<img src="doc/source/images/output1.PNG" width="250"><img src="doc/source/images/output2.PNG" width="250">
+
+<img src="doc/source/images/output1.PNG" width="250">
+<img src="doc/source/images/output2.PNG" width="250">
 <img src="doc/source/images/output3.PNG" width="250">
+
 * Here's the app translating a Spanish text from a road sign to English.
-<img src="doc/source/images/output_2.PNG" width="250">
+
+<img src="doc/source/images/output_2.png" width="250">
 
 # Troubleshooting
 

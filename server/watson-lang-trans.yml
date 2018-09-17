@@ -32,8 +32,14 @@ spec:
         volumeMounts:
             - mountPath: /opt/lt-service-bind
               name: service-bind-volume
+            - mountPath: /opt/nlu-service-bind
+              name: nluservice-bind-volume
       volumes:
         - name: service-bind-volume
           secret:
             defaultMode: 420
             secretName: binding-ocrlangtranslator
+        - name: nluservice-bind-volume
+          secret:
+            defaultMode: 420
+            secretName: binding-ocrnlu

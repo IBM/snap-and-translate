@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/.svg?branch=master)](https://travis-ci.org/IBM/<repo>)
+[![Build Status](https://travis-ci.org/IBM/.svg?branch=master)](https://travis-ci.org/IBM/snap-and-translate)
 
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 

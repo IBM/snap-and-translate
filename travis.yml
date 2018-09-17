@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+   - "node"
+install:
+  - cd server
+  - npm run install
+script:
+  - cd server
+  - ./node_modules/.bin/eslint .

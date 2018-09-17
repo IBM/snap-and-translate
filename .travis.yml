@@ -1,0 +1,7 @@
+language: node_js
+node_js: 6
+install:
+  - cd server
+  - npm install
+script:
+  - ./node_modules/.bin/eslint .

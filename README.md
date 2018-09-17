@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/<repo>.svg?branch=master)](https://travis-ci.org/IBM/<repo>)
+[![Build Status](https://travis-ci.org/IBM/.svg?branch=master)](https://travis-ci.org/IBM/<repo>)
 
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
@@ -21,7 +21,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 4. Recognized text,translated language,sentiment and emotion result is returned to the mobile app for display.
 
 ## Included components
-* [IBM Cloud Container Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Bluemix Container Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
+* [IBM Cloud Kubernetes Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Cloud Kubernetes Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
 * [Watson Language Translator](https://www.ibm.com/watson/services/language-translator/): IBM Watson Language Translator is a service that enables you to dynamically translate news, patents or conversational documents.
 * [Watson Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding.html): An IBM Cloud service that can analyze text to extract meta-data from content such as concepts, entities, keywords, categories, sentiment, emotion, relations, semantic roles, using natural language understanding. 
 
@@ -50,13 +50,13 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 Clone the `snap-and-translate` repo locally. In a terminal, run:
 
 ```
-$ git clone https://github.ibm.com/riyamaro/snap-and-translate.git
+$ git clone https://github.com/IBM/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
 ## 2. Create language translation and natural language understanding service with IBM Cloud
 
-If you do not already have a IBM Cloud account, [sign up for Bluemix](https://console.bluemix.net/registration).
+If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://console.bluemix.net/registration).
 Create the following services:
 
 * [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
@@ -77,7 +77,7 @@ Install the [pre-requisites](https://github.com/IBM/container-service-getting-st
 * Set the Kubernetes environment to work with your cluster:
 
 ```
-$ bx cs cluster-config <replace_with_your_cluster_name>
+$ ibmcloud cs cluster-config <replace_with_your_cluster_name>
 ```
 
 The output of this command will contain a KUBECONFIG environment variable that must be exported in order to set the context. Copy and paste the output in the terminal window. An example is:
@@ -91,15 +91,15 @@ $ export KUBECONFIG=/Users/riyaroy/.bluemix/plugins/container-service/clusters/<
 Add the Language Translator & Natural Language Understanding service to your IBM Cloud account by replacing with a name for your service instance.
 
 ```
-$ bx service create language_translator lite <service_name>
-$ bx service create natural-language-understanding free <service_name>
+$ ibmcloud service create language_translator lite <service_name>
+$ ibmcloud service create natural-language-understanding free <service_name>
 ```
 
 * Bind the Language Translator & Natural Language Understanding instance to the default Kubernetes namespace for the cluster. Later, you can create your own namespaces to manage user access to Kubernetes resources, but for now, use the default namespace. Kubernetes namespaces are different from the registry namespace you created earlier. Replace cluster name and service instance name.
 
 ```
-$ bx cs cluster-service-bind --cluster <cluster_name> --namespace default --service <language_translate_service_name>
-$ bx cs cluster-service-bind --cluster <cluster_name> --namespace default --service <nlu_service_name>
+$ ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default --service <language_translate_service_name>
+$ ibmcloud cs cluster-service-bind --cluster <cluster_name> --namespace default --service <nlu_service_name>
 ```
 
 Your cluster is configured and your local environment is ready for you to start deploying apps into the cluster.
@@ -128,7 +128,7 @@ $ kubectl apply -f watson-lang-trans.yml
 * Get the public IP address by replacing the <cluster_name>. (Take a note of the Public IP address since it is required in the later steps) 
 
 ```
-$ bx cs workers <cluster_name>
+$ ibmcloud cs workers <cluster_name>
 ```
 
 ## 4. Run the server application locally

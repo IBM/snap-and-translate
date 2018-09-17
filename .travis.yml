@@ -3,7 +3,7 @@ node_js:
    - "node"
 install:
   - cd server
-  - npm run install
+  - npm install
 script:
   - cd server
   - ./node_modules/.bin/eslint .

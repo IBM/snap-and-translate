@@ -12,7 +12,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 * Translate recognized text using Watson Language Translator.
 * Extract sentiment, emotion from the text using Watson Natural Language Understanding.
 
-![Architecture diagram](doc/source/images/architecture-v3.png)
+![Architecture diagram](doc/source/images/architecture-v4.png)
 
 ## Flow
 1. The user interacts with the mobile app and captures an image or selects an image from the photo album.

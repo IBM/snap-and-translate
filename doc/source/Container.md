@@ -6,7 +6,7 @@ Install the [pre-requisites](https://github.com/IBM/container-service-getting-st
 
 # Steps
 
-* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://console.bluemix.net/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
+* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://cloud.ibm.com/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 * Set the Kubernetes environment to work with your cluster:
 

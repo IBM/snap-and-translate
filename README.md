@@ -30,10 +30,6 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Node.js](https://nodejs.org/): An open-source JavaScript run-time environment for executing server-side JavaScript code.
 * [Tesseract OCR](https://github.com/tesseract-ocr/): An open-source Optical Character Recognition(OCR) engine.
 
-# Watch the Video
-
-TODO
-
 # Steps
 
 This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR, Watson Language Translator and Watson Natural Language Understanding. Mobile application is built locally and run on the Android/iOS phone.

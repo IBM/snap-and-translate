@@ -54,17 +54,9 @@ $ git clone https://github.com/IBM/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-## 2. Create language translation and natural language understanding service with IBM Cloud
-
-If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://console.bluemix.net/registration).
-Create the following services:
-
-* [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
-* [**Watson Natural Language Understanding**](https://console.bluemix.net/catalog/services/natural-language-understanding)
-
 Go to `Service Credentials` and save the `API Key` and `URL` for later use.
 
-## 3. Run the server application in a container on IBM Cloud with Kubernetes
+## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.
 
@@ -131,9 +123,17 @@ $ kubectl apply -f watson-lang-trans.yml
 $ ibmcloud cs workers <cluster_name>
 ```
 
-## 4. Run the server application locally
+## 3. Run the server application locally
 
-* Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
+### 1. Create language translation and natural language understanding service with IBM Cloud
+
+If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://console.bluemix.net/registration).
+Create the following services:
+
+* [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
+* [**Watson Natural Language Understanding**](https://console.bluemix.net/catalog/services/natural-language-understanding)
+
+### 2. Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
 
 ```
 $ cp env.sample .env
@@ -151,7 +151,10 @@ NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<use natural language understanding ia
 NATURAL_LANGUAGE_UNDERSTANDING_URL=<use natural language understanding URL>
 ```	
 
-* Go to `server` folder and run the docker build. From terminal run: 
+### 3. Go to `server` folder and run the docker build. 
+
+* Build the `snap-translate-server`. From terminal run: 
+
 ```
 $ cd server
 $ docker build -t snap-translate-server .
@@ -162,7 +165,7 @@ docker run --rm -it -p 3000:3000 snap-translate-server
 ```
 * You can now access the `server` API using URL: `http://localhost:3000`
 
-## 5. Run the mobile application
+## 4. Run the mobile application
 
 Steps below will help you to deploy the `snap-and-translate/mobile` mobile application.
 

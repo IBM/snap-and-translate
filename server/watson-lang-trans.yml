@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: deploy-watson-tesseract
-        image: registry.ng.bluemix.net/<namespace>/<imagename>:<tag>
+        image: registry.ng.bluemix.net/<namespace>/watsontesseract:1
         ports:
         - containerPort: 3000
         volumeMounts:

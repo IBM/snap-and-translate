@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/snap-and-translate.svg?branch=master)](https://travis-ci.org/IBM/snap-and-translate)
+[![Build Status](https://api.travis-ci.org/IBM/snap-and-translate.svg?branch=master)](https://travis-ci.org/IBM/snap-and-translate)
 
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
@@ -21,7 +21,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 4. Recognized text,translated language,sentiment and emotion result is returned to the mobile app for display.
 
 ## Included components
-* [IBM Cloud Kubernetes Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Cloud Kubernetes Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
+* [IBM Cloud Kubernetes Service](https://cloud.ibm.com/docs/containers/container_index.html): IBM Cloud Kubernetes Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
 * [Watson Language Translator](https://www.ibm.com/watson/services/language-translator/): IBM Watson Language Translator is a service that enables you to dynamically translate news, patents or conversational documents.
 * [Watson Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding.html): An IBM Cloud service that can analyze text to extract meta-data from content such as concepts, entities, keywords, categories, sentiment, emotion, relations, semantic roles, using natural language understanding. 
 
@@ -63,7 +63,7 @@ Install the [pre-requisites](https://github.com/IBM/container-service-getting-st
 
 ### Steps
 
-* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://console.bluemix.net/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
+* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://cloud.ibm.com/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 * Set the Kubernetes environment to work with your cluster:
 
@@ -129,11 +129,11 @@ $ ibmcloud cs workers <cluster_name>
 
 ### 1. Create language translation and natural language understanding service with IBM Cloud
 
-If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://console.bluemix.net/registration).
+If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://cloud.ibm.com/registration).
 Create the following services:
 
-* [**Watson Language Translator**](https://console.bluemix.net/catalog/services/language-translator)
-* [**Watson Natural Language Understanding**](https://console.bluemix.net/catalog/services/natural-language-understanding)
+* [**Watson Language Translator**](https://cloud.ibm.com/catalog/services/language-translator)
+* [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
 
 ### 2. Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
 
@@ -333,7 +333,7 @@ This error message is likely occurring because the service instance has not full
 # Links
 
 * [Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk): Visit the Node.js library to access IBM Watson services.
-* [Create Kubernetes cluster](https://console.bluemix.net/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
+* [Create Kubernetes cluster](https://cloud.ibm.com/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
 * [Sample Node.js application for Language Translator](https://github.com/watson-developer-cloud/language-translator-nodejs): Sample Node.JS application for Watson Language Translator service
 
 # Learn more

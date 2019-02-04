@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/snap-and-translate.svg?branch=master)](https://travis-ci.org/IBM/snap-and-translate)
+[![Build Status](https://api.travis-ci.org/IBM/snap-and-translate.svg?branch=master)](https://travis-ci.org/IBM/snap-and-translate)
 
 # Build a hybrid mobile app that can capture an image, recognize and translate text using Tesseract OCR & Watson Language Translator
 
@@ -21,7 +21,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 4. Recognized text,translated language,sentiment and emotion result is returned to the mobile app for display.
 
 ## Included components
-* [IBM Cloud Kubernetes Service](https://console.bluemix.net/docs/containers/container_index.html): IBM Cloud Kubernetes Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
+* [IBM Cloud Kubernetes Service](https://cloud.ibm.com/docs/containers/container_index.html): IBM Cloud Kubernetes Service manages highly available apps inside Docker containers and Kubernetes clusters on the IBM Cloud.
 * [Watson Language Translator](https://www.ibm.com/watson/services/language-translator/): IBM Watson Language Translator is a service that enables you to dynamically translate news, patents or conversational documents.
 * [Watson Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding.html): An IBM Cloud service that can analyze text to extract meta-data from content such as concepts, entities, keywords, categories, sentiment, emotion, relations, semantic roles, using natural language understanding. 
 
@@ -29,10 +29,6 @@ When the reader has completed this Code Pattern, they will understand how to:
 * [Apache Cordova](https://cordova.apache.org/): An open-source mobile development framework to build hybrid mobile apps.
 * [Node.js](https://nodejs.org/): An open-source JavaScript run-time environment for executing server-side JavaScript code.
 * [Tesseract OCR](https://github.com/tesseract-ocr/): An open-source Optical Character Recognition(OCR) engine.
-
-# Watch the Video
-
-TODO
 
 # Steps
 
@@ -42,7 +38,7 @@ This Code Pattern contains several pieces. The Node.js server application runnin
 1. [Clone the repo](#1-clone-the-repo)
 2. [Create language translation and natural language understanding service with IBM Cloud](#2-create-language-translation-and-natural-language-understanding-service-with-ibm-cloud)
 3. [Run the server application in a container on IBM Cloud with Kubernetes](#3-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
-4. [Run the server application locally using docker](#4-run-the-application-locally-using-docker)
+4. [Run the server application locally](#4-run-the-server-application-locally)
 5. [Run the mobile application](#5-run-the-mobile-application)
 
 ## 1. Clone the repo
@@ -54,6 +50,17 @@ $ git clone https://github.com/IBM/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
+<<<<<<< HEAD
+=======
+## 2. Create language translation and natural language understanding service with IBM Cloud
+
+If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://cloud.ibm.com/registration).
+Create the following services:
+
+* [**Watson Language Translator**](https://cloud.ibm.com/catalog/services/language-translator)
+* [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
+
+>>>>>>> master
 Go to `Service Credentials` and save the `API Key` and `URL` for later use.
 
 ## 2. Run the server application in a container on IBM Cloud with Kubernetes
@@ -64,7 +71,7 @@ Install the [pre-requisites](https://github.com/IBM/container-service-getting-st
 
 ### Steps
 
-* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://console.bluemix.net/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
+* Follow the instructions to [Create a Kubernetes Cluster,Setup CLI, Setup Private registry and to set up your cluster environment](https://cloud.ibm.com/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 * Set the Kubernetes environment to work with your cluster:
 
@@ -206,7 +213,7 @@ For this Code Pattern, you'll need to at first install the prerequisites for And
 
 #### 2a. [Android requirements](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#requirements-and-support)
 
-* [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Java Development Kit (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Node.js and npm](https://nodejs.org/en/download/) (`npm` version 4.5.0 or higher)
 * [Android Studio](https://developer.android.com/studio/), which includes Android tools and gives you access to Android SDKs
 * [Cordova](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html)
@@ -334,14 +341,16 @@ This error message is likely occurring because the service instance has not full
 # Links
 
 * [Watson Node.js SDK](https://github.com/watson-developer-cloud/node-sdk): Visit the Node.js library to access IBM Watson services.
-* [Create Kubernetes cluster](https://console.bluemix.net/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
+* [Create Kubernetes cluster](https://cloud.ibm.com/docs/containers/cs_tutorials.html#objectives): Tutorial- Creating Kubernetes Cluster and adding Watson service to cluster.
 * [Sample Node.js application for Language Translator](https://github.com/watson-developer-cloud/language-translator-nodejs): Sample Node.JS application for Watson Language Translator service
 
 # Learn more
 
-* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/code/technologies/artificial-intelligence/).
+* **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
 * **AI and Data Code Pattern Playlist**: Bookmark our [playlist](https://www.youtube.com/playlist?list=PLzUbsvIyrNfknNewObx5N7uGZ5FKH0Fde) with all of our Code Pattern videos
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
 
 # License
-[Apache 2.0](LICENSE)
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)

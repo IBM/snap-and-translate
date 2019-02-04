@@ -36,13 +36,15 @@ TODO
 
 # Steps
 
-This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR, Watson Language Translator and Watson Natural Language Understanding. Mobile application is built locally and run on the Android/iOS phone.
+This Code Pattern contains several pieces. The Node.js server application running on IBM Cloud Kubernetes service communicates with the Tesseract OCR, Watson Language Translator and Watson Natural Language Understanding. Mobile application is built locally and runs on the Android/iOS phone.
 
 
 1. [Clone the repo](#1-clone-the-repo)
 2. [Run the server application in a container on IBM Cloud with Kubernetes](#3-run-the-server-application-in-a-container-on-ibm-cloud-with-kubernetes)
 3. [Run the server application locally using docker](#4-run-the-server-application-locally-using-docker)
 4. [Run the mobile application](#5-run-the-mobile-application)
+
+>NOTE: Either run step 2 (deploying to IBM cloud using Kubernetes) or step 3 (running locally)
 
 ## 1. Clone the repo
 
@@ -107,11 +109,7 @@ $ docker build -t registry.ng.bluemix.net/<ibmcloud_container_registry_namespace
 $ docker push registry.ng.bluemix.net/<ibmcloud_container_registry_namespace>/watsontesseract:1
 ```
 
-* Update the `image` in `watson-lang-trans.yml` with your image name which in this case is `watsontesseract`.
-
 * Update the `namespace` in `watson-lang-trans.yml` with `<ibmcloud_container_registry_namespace>`
-
-* Update the `tag` in `watson-lang-trans.yml` with the tag number you created during docker push which in this case is `1`.
  
 * Run the configuration script.
 
@@ -127,7 +125,7 @@ $ ibmcloud cs workers <cluster_name>
 
 ## 3. Run the server application locally using docker
 
-### 1. Create language translation and natural language understanding service with IBM Cloud
+### 3a. Create language translation and natural language understanding service with IBM Cloud
 
 If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://cloud.ibm.com/registration).
 Create the following services:
@@ -135,7 +133,7 @@ Create the following services:
 * [**Watson Language Translator**](https://cloud.ibm.com/catalog/services/language-translator)
 * [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
 
-### 2. Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
+### 3b. Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
 
 ```
 $ cp env.sample .env
@@ -153,7 +151,7 @@ NATURAL_LANGUAGE_UNDERSTANDING_IAM_APIKEY=<use natural language understanding ia
 NATURAL_LANGUAGE_UNDERSTANDING_URL=<use natural language understanding URL>
 ```	
 
-### 3. Go to `server` folder and run the docker build. 
+### 3c. Go to `server` folder and run the docker build. 
 
 * Build the `snap-translate-server`. From terminal run: 
 
@@ -343,4 +341,4 @@ This error message is likely occurring because the service instance has not full
 * **With Watson**: Want to take your Watson app to the next level? Looking to utilize Watson Brand assets? [Join the With Watson program](https://www.ibm.com/watson/with-watson/) to leverage exclusive brand, marketing, and tech resources to amplify and accelerate your Watson embedded commercial solution.
 
 # License
-[Apache 2.0](LICENSE)
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).

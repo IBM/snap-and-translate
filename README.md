@@ -50,19 +50,6 @@ $ git clone https://github.com/IBM/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-<<<<<<< HEAD
-=======
-## 2. Create language translation and natural language understanding service with IBM Cloud
-
-If you do not already have a IBM Cloud account, [sign up for IBM Cloud](https://cloud.ibm.com/registration).
-Create the following services:
-
-* [**Watson Language Translator**](https://cloud.ibm.com/catalog/services/language-translator)
-* [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
-
->>>>>>> master
-Go to `Service Credentials` and save the `API Key` and `URL` for later use.
-
 ## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.

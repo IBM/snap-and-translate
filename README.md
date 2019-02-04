@@ -108,9 +108,12 @@ $ docker build -t registry.ng.bluemix.net/<ibmcloud_container_registry_namespace
 $ docker push registry.ng.bluemix.net/<ibmcloud_container_registry_namespace>/watsontesseract:1
 ```
 
-* Update the `image` in `watson-lang-trans.yml` with your image name
+* Update the `image` in `watson-lang-trans.yml` with your image name which in this case is `watsontesseract`.
 
+* Update the `namespace` in `watson-lang-trans.yml` with `<ibmcloud_container_registry_namespace>`
 
+* Update the `tag` in `watson-lang-trans.yml` with the tag number you created during docker push which in this case is `1`.
+ 
 * Run the configuration script.
 
 ```

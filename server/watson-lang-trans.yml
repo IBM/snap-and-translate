@@ -38,8 +38,8 @@ spec:
         - name: service-bind-volume
           secret:
             defaultMode: 420
-            secretName: binding-ocrlangtranslator
+            secretName: <binding-ocrlangtranslator>
         - name: nluservice-bind-volume
           secret:
             defaultMode: 420
-            secretName: binding-ocrnlu
+            secretName: <binding-ocrnlu>

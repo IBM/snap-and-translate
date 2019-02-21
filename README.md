@@ -131,6 +131,8 @@ Create the following services:
 * [**Watson Language Translator**](https://cloud.ibm.com/catalog/services/language-translator)
 * [**Watson Natural Language Understanding**](https://cloud.ibm.com/catalog/services/natural-language-understanding)
 
+Go to the `Service Credentials` tab for each service and save the `API Key` and `URL` of each service for later use.
+
 ### 3b. Copy the `env.sample` to `.env` and replace the `IAM API` key and the `URL` that you got when you created the Watson language translation service. From terminal run:
 
 ```

@@ -55,8 +55,6 @@ $ git clone https://github.com/IBM/snap-and-translate.git
 $ cd snap-and-translate
 ```
 
-Go to `Service Credentials` and save the `API Key` and `URL` for later use.
-
 ## 2. Run the server application in a container on IBM Cloud with Kubernetes
 
 Steps below will help you to deploy the `snap-and-translate/server` application into a container running on IBM Cloud, using Kubernetes.

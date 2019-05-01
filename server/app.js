@@ -5,8 +5,8 @@ const application = express();
 const fs = require("fs");
 const formidable = require("formidable");
 const tesseract = require("node-tesseract");
-const LanguageTranslatorV3 = require("watson-developer-cloud/language-translator/v3");
-const NaturalLanguageUnderstandingV1 = require('watson-developer-cloud/natural-language-understanding/v1.js');
+const LanguageTranslatorV3 = require("ibm-watson/language-translator/v3");
+const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js');
 require('dotenv').config();
 
 let languageTranslator = new LanguageTranslatorV3({

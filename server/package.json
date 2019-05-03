@@ -7,7 +7,7 @@
     "express": "^4.16.3",
     "formidable": "*",
     "node-tesseract": "*",
-    "watson-developer-cloud": "3.8.0"
+    "ibm-watson": "^4.1.0"
   },
   "main": "app.js",
   "scripts": {

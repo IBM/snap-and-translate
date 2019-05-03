@@ -257,7 +257,7 @@ Start by adding the Android/iOS platform as the target for your mobile app.
 ```
 $ cd snap-and-translate/mobile
 $ cordova platform add android
-$ cordova platform add ios
+$ cordova platform add ios@5.0.0
 ```
 
 Ensure that everything has been installed correctly:

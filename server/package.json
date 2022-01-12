@@ -6,8 +6,8 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "formidable": "*",
-    "node-tesseract": "*",
-    "ibm-watson": "^4.1.0"
+    "ibm-watson": "^4.1.0",
+    "node-tesseract": "*"
   },
   "main": "app.js",
   "scripts": {
@@ -19,6 +19,6 @@
     "url": "https://github.ibm.com/riyamaro/snap-translate.git"
   },
   "devDependencies": {
-    "eslint": "^5.5.0"
+    "eslint": "^8.6.0"
   }
 }
